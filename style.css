@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    background-color: black;
+}
+.nav{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.nav a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #AEB6BF;
+}
+.nav-1{
+    height: 120px;
+    background-color:#2C3E50;
+}
+.box-1{
+    position: absolute;
+    top: 40px;
+    right: 200px;
+    background-color: pink;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.box-1 input{
+    padding: 10px 10px 0px 0px;
+    background-color: white;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.btn {
+    margin-top: 20px;
+    border: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 10px;
+}
+.button{
+    position: absolute;
+    top: 90px;
+    right: 340px;
+}
+.btn:hover {
+    background-color:#FF4F00;
+}
+.btn , .web-layouts , .logo , .banner ,.flayer{
+    background-color: white;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #FF4F00
+}
+.col-30{
+    background-color: red;
+    color: white;
+    width: 300px;
+    height: 210px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+.col-70{
+    margin: 20px 20px 20px 20px;
+    background-color: #FF4F00;
+    color: white;
+}
+.col-70 h1{
+    font-size: 50px;
+    text-align: left;
+}
+.col-70 p{
+    font-size: 20px;
+    text-align: left;
+}
+.col-70 h2{
+    font-size: 20px;
+    text-align: right;
+}
