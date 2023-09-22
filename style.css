@@ -21,13 +21,14 @@
     background-color:#2C3E50;
 }
 .box-1{
+    width: 236px;
     position: absolute;
     top: 40px;
     right: 200px;
     background-color: pink;
     font-size: 20px;
     border-radius: 10px;
-    text-align: center;
+    text-align: right;
 }
 .box-1 input{
     padding: 10px 10px 0px 0px;
@@ -35,32 +36,32 @@
     border: none;
     text-align: center;
     font-size: 15px;
-    border-radius: 10px;
 }
 .btn {
     margin-top: 20px;
     border: none;
     padding: 10px 10px;
     font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     display: inline-block;
     border-radius: 10px;
 }
 .button{
     position: absolute;
-    top: 90px;
+    top: 85px;
     right: 340px;
 }
 .btn:hover {
     background-color:#FF4F00;
 }
-.btn , .web-layouts , .logo , .banner ,.flayer{
+.btn{
     background-color: white;
     font-size: 20px;
 }
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     background-color: #FF4F00
 }
@@ -71,6 +72,17 @@
     height: 210px;
     margin: 20px 20px 20px 20px;
     border-radius: 20px;
+}
+.col-30 h1{
+    padding-top: 20px;
+    color: #04fa04;
+    font-size: bold;
+}
+.col-30 p{
+    padding:0px 10px 0px 10px;
+    color: white;
+    font-size: 13px;
+    text-align: left;
 }
 .col-70{
     margin: 20px 20px 20px 20px;
@@ -88,4 +100,39 @@
 .col-70 h2{
     font-size: 20px;
     text-align: right;
+}
+.container-2{
+    display: flex;
+}
+.col-60{
+    background-color: #f1f1f1;
+    width: 60%;
+    padding: 0px 30px 10px 30px;
+}
+.col-60 h1{
+    color: black;
+}
+.col-60 hr{
+    border: 2px solid #b8b8b8;
+}
+.col-60 p{
+    margin-top: 20px;
+    font-size: 15px;
+}
+.col-40{
+    width: 40%;
+    background-color: white;
+}
+.col-40 h1{
+    padding-left: 40px;
+    font-style: italic;
+}
+.row{
+    background-color: #FF4F00;
+    width: 500px;
+    height: 400px;
+}
+.row-1{
+    padding-top: 20px;
+    font-size: 14px;
 }
