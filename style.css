@@ -63,7 +63,9 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-    background-color: #FF4F00
+    background-color: #FF4F00;
+    position: relative;
+    z-index: 1;
 }
 .col-30{
     background-color: red;
