@@ -4,20 +4,21 @@
     box-sizing: border-box;
 }
 .header{
-    background-color: black;
+    background-color: #2C3E50;
 }
-.nav{
+.nav-1{
+    background-color: black;
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
-.nav a{
+.nav-1 a{
     font-size: 20px;
     text-decoration: none;
     color: #AEB6BF;
 }
-.nav-1{
-    height: 120px;
+.nav-2{
+    min-height: 120px;
     background-color:#2C3E50;
 }
 .box-1{
@@ -31,6 +32,8 @@
     text-align: right;
 }
 .box-1 input{
+    border-top-right-radius: 10px;  /* Rounded on top-right */
+    border-bottom-right-radius: 10px; /* Rounded on bottom-right */
     padding: 10px 10px 0px 0px;
     background-color: white;
     border: none;
@@ -55,25 +58,31 @@
 .btn:hover {
     background-color:#FF4F00;
 }
+.button:hover + .menu-content{
+    display: flex;
+}
 .btn{
     background-color: white;
     font-size: 20px;
 }
-.container{
-    display: flex;
+.menu-content{
+    display: none;
     justify-content: space-around;
+    margin-top: 118px;
     text-align: center;
-    background-color: #FF4F00;
+    background: linear-gradient(0.25turn, #fa8e5c, #FF4F00);
     position: relative;
     z-index: 1;
 }
 .col-30{
-    background-color: red;
+    background: linear-gradient(red, #2c0505);
     color: white;
     width: 300px;
     height: 210px;
     margin: 20px 20px 20px 20px;
     border-radius: 20px;
+    box-shadow: 10px 10px 10px;
+    color: #2c0505;
 }
 .col-30 h1{
     padding-top: 20px;
@@ -88,7 +97,6 @@
 }
 .col-70{
     margin: 20px 20px 20px 20px;
-    background-color: #FF4F00;
     color: white;
 }
 .col-70 h1{
@@ -103,7 +111,7 @@
     font-size: 20px;
     text-align: right;
 }
-.container-2{
+.container{
     display: flex;
 }
 .col-60{
@@ -119,7 +127,7 @@
 }
 .col-60 p{
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 22px;
 }
 .col-40{
     width: 40%;
@@ -132,9 +140,57 @@
 .row{
     background-color: #FF4F00;
     width: 500px;
-    height: 400px;
+    height: 670px;
 }
 .row-1{
     padding-top: 20px;
     font-size: 14px;
+}
+#img-1{
+    margin: 0px 40px;
+    padding: 20px 20px;
+    width: 400px;
+    height: 390px;
+}
+.row-1 h2{
+    padding-left: 40px;
+    font-size: 30px;
+}
+#img-2{
+    padding: 20px 40px;
+    width: 500px;
+    height: 190px;
+}
+.footer{
+    background-color: black;
+}
+.footer-links a{
+    padding-top: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #AEB6BF;
+}
+.footer-links div{
+    padding-top: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #AEB6BF;
+}
+.footer-links{
+    display: flex;
+    justify-content: space-around;
+}
+.width-15{
+    width: 15%;
+}
+.footer-text h1{
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+.footer-text p{
+    padding: 10px 0px 10px 0px;
+    font-size: 13px;
+    color: white;
+    text-align: center;
 }
