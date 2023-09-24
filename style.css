@@ -5,6 +5,7 @@
 }
 .header{
     background-color: #2C3E50;
+    min-height: 190px;
 }
 .nav-1{
     background-color: black;
@@ -50,8 +51,11 @@
     left: 0px;
     transform: rotateX(150deg);
     font-size: 50px;
-    color: white;
     opacity: 0.2;
+    background: linear-gradient(to bottom, transparent 30%, white 70%); /* Use a gradient mask to hide 30% of the reflection */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 #name-2{
     position: absolute;
@@ -59,8 +63,11 @@
     left: 207px;
     transform: rotateX(150deg);
     font-size: 50px;
-    color: #60fd60;
     opacity: 0.2;
+    background: linear-gradient(to bottom, transparent 30%, #60fd60 70%); /* Use a gradient mask to hide 30% of the reflection */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 .box-1{
     width: 236px;
@@ -93,8 +100,8 @@
 }
 .button{
     position: absolute;
-    top: 85px;
-    right: 340px;
+    top: 134px;
+    right: 230px;
 }
 .btn:hover {
     background-color:#FF4F00;
@@ -109,7 +116,7 @@
 .menu-content{
     display: none;
     justify-content: space-around;
-    margin-top: 118px;
+    margin-top: 167px;
     text-align: center;
     background: linear-gradient(0.25turn, #fa8e5c, #FF4F00);
     position: relative;
