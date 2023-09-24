@@ -8,9 +8,13 @@
 }
 .nav-1{
     background-color: black;
-    text-align: center;
     display: flex;
     justify-content: space-around;
+}
+.vertical-slim-div{
+    width: 2px;
+    height: 20px;
+    background-color: #AEB6BF;
 }
 .nav-1 a{
     font-size: 20px;
@@ -20,6 +24,43 @@
 .nav-2{
     min-height: 120px;
     background-color:#2C3E50;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+#title{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    font-size: 50px;
+}
+#company{
+    color: white;
+}
+#name{
+    color: #04fa04;
+}
+#company-1{
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    transform: rotateX(150deg);
+    font-size: 50px;
+    color: white;
+    opacity: 0.2;
+}
+#name-2{
+    position: absolute;
+    top: 60px;
+    left: 207px;
+    transform: rotateX(150deg);
+    font-size: 50px;
+    color: #60fd60;
+    opacity: 0.2;
 }
 .box-1{
     width: 236px;
@@ -32,8 +73,8 @@
     text-align: right;
 }
 .box-1 input{
-    border-top-right-radius: 10px;  /* Rounded on top-right */
-    border-bottom-right-radius: 10px; /* Rounded on bottom-right */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 10px 10px 0px 0px;
     background-color: white;
     border: none;
