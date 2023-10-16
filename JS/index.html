@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-input-container">
+            <input type="text" placeholder="Add new" id="todo-input">
+            <button onclick="add()">Add</button>
+        </div>
+        <div class="todo-list-container">
+            <dl id="todo-list">
+                <dd>Read a book</dd>
+                <dd>Lunch with Caro</dd>
+                <dd>Feel the dog</dd>
+            </dl>
+        </div>
+    </div>
+</body>
+<script>
+    function add(){
+
+        let todoInput = document.getElementById("todo-input");
+
+        if(todoInput.value == ""){
+            alert("Please Enter Task.")
+        }
+        else{
+            let newTodoList = document.getElementById("todo-list").innerHTML + `<dd>${todoInput.value}</dd>`;
+            document.getElementById("todo-list").innerHTML = newTodoList;
+        }
+    }
+</script>
+</html>
