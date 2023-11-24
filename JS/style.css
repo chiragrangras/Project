@@ -30,17 +30,87 @@ button{
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap */
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { ... }
+/*Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container{
+        width: 300px;
+        margin-left: 130px;
+        margin-top: 5px;
+    }
+    input{
+        width: 180px;
+        height: 30px;
+    }
+    button{
+        width: 85px;
+        height: 30px;
+    }
+}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { ... }
+@media (min-width: 768px) {
+    .container{
+        width: 300px;
+        margin-left: 230px;
+        margin-top: 5px;
+    }
+    input{
+        width: 180px;
+        height: 30px;
+    }
+    button{
+        width: 85px;
+        height: 30px;
+    }
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
+@media (min-width: 992px) {
+    .container{
+        width: 300px;
+        margin-left: 335px;
+        margin-top: 5px;
+    }
+    input{
+        width: 180px;
+        height: 30px;
+    }
+    button{
+        width: 85px;
+        height: 30px;
+    }
+}
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) {
+    .container{
+        width: 300px;
+        margin-left: 450px;
+        margin-top: 5px;
+    }
+    input{
+        width: 180px;
+        height: 30px;
+    }
+    button{
+        width: 85px;
+        height: 30px;
+    }
+}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { ... }
+@media (min-width: 1400px) {
+    .container{
+        width: 300px;
+        margin-left: 536px;
+        margin-top: 5px;
+    }
+    input{
+        width: 180px;
+        height: 30px;
+    }
+    button{
+        width: 85px;
+        height: 30px;
+    }
+}
