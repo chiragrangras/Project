@@ -14,8 +14,17 @@ function MenProduct() {
     size,
     price
   ) => {
-    const product = { id, name, size, price };
-    setCartDetail([...cartDetail, product]);
+    let product = cartDetail.find(product => product.id === id);
+
+    if(product){
+      product.quantity++;
+      console.log(`Product in if: ${JSON.stringify(product)}`);
+      // setCartDetail([...cartDetail]);
+    }else{
+      product = { id, name, size, price, quantity: 1};
+      console.log(`Product in else: ${JSON.stringify(product)}`);
+      setCartDetail([...cartDetail, product]);
+    }
   };
 
   return (
