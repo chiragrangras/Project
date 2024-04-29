@@ -55,7 +55,14 @@ function Header() {
             <div className="d-flex gap-2">
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Men" id="navbarScrollingDropdown">
-                <NavDropdown.Item ><Link to={"/men-product"} class="text-decoration-none text-dark">T-shirt</Link> </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link
+                    to={"/men-product"}
+                    class="text-decoration-none text-dark"
+                  >
+                    T-shirt
+                  </Link>{" "}
+                </NavDropdown.Item>
                 {/* <NavDropdown.Item href="men-product">T-shirt</NavDropdown.Item> */}
                 <NavDropdown.Item href="#action4">Sweat shirt</NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -71,7 +78,14 @@ function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Women" id="navbarScrollingDropdown">
-              <NavDropdown.Item ><Link to={"/women-product"} class="text-decoration-none text-dark">T-shirt</Link> </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link
+                    to={"/women-product"}
+                    class="text-decoration-none text-dark"
+                  >
+                    T-shirt
+                  </Link>{" "}
+                </NavDropdown.Item>
                 {/* <NavDropdown.Item href="women-product">
                   Women T-shirt
                 </NavDropdown.Item> */}
@@ -120,17 +134,23 @@ function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <div className="link d-flex gap-4">
-                <Nav.Link as={Link} to="/track-order">Track Your Order</Nav.Link>
-                <Nav.Link as={Link} to="/sell-our-product">Sell Our Product</Nav.Link>
-                <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
+                <Nav.Link as={Link} to="/track-order">
+                  Track Your Order
+                </Nav.Link>
+                <Nav.Link as={Link} to="/sell-our-product">
+                  Sell Our Product
+                </Nav.Link>
               </div>
             </div>
             <div className="d-flex gap-2">
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                className="pt-3"
-                size="1.5x"
-              />
+              <Nav.Link as={Link} to="/cart">
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className="pt-3"
+                  size="1.5x"
+                />
+              </Nav.Link>
+
               {loginUser ? (
                 <>
                   <span>Welcome {loginUser}</span>
