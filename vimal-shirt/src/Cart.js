@@ -39,8 +39,9 @@ function Cart() {
       <Header />
       <div className="cart">
         <div>
-          <h1>Cart</h1>
+          <h1>Cart items</h1>
         </div>
+        <div className="line"/>
         {cartDetail.map((product, index) => (
           <div key={index}>
             {`${product.name} - ${product.size} - Rs. ${product.price} - Quantity: ${product.quantity}`}
@@ -66,7 +67,8 @@ function Cart() {
             </span>
           </div>
         ))}
-        <div>Sum: {computeTotal()}</div>
+        <div className="ms-2 mt-2">Total Price: {computeTotal()}</div>
+        <div><Button className="ms-2 mt-2">Payment</Button></div>
       </div>
       <Footer />
     </>
