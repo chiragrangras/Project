@@ -96,6 +96,15 @@
   text-decoration: none;
   color: black;
 }
+.cart{
+  margin: 10px 0px 10px 400px;
+  width: 490px;
+  height: 250px;
+  border: 1px solid black;
+  text-align: center;
+  background-color:rgba(33, 37, 41, 1);
+  color: white;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
