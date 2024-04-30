@@ -46,7 +46,7 @@ function MenProduct() {
                 Purple T-Shirt for Men
               </a>
             </Card.Title>
-            <p className="price">Rs.349.00</p>
+            <p className="price">Rs.350.00</p>
             <div className="d-flex my-3 gap-2">
               <Button className="btn btn-light border border-2">Small</Button>
               <Button className="btn btn-light border border-2">X-Large</Button>
@@ -57,7 +57,7 @@ function MenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-purple"></div>
-            <Button variant="primary" onClick={() => addToCartHandle(1, "Purple Men's Tshirt", "XL", 349)}>Add to Cart</Button>
+            <Button variant="primary" onClick={() => addToCartHandle(1, "Purple Men's Tshirt", "XL", 350)}>Add to Cart</Button>
           </Card.Body>
         </Card>
         <Card style={{ width: "25rem" }}>
@@ -75,7 +75,7 @@ function MenProduct() {
                 Green T-Shirt for Men
               </a>
             </Card.Title>
-            <p className="price">Rs.349.00</p>
+            <p className="price">Rs.450.00</p>
             <div>
               <Button className="btn btn-light border border-2 mx-2 my-2">
                 Small
@@ -96,7 +96,7 @@ function MenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-green"></div>
-            <Button variant="primary" onClick={() => addToCartHandle(2, "Green Men's Tshirt", "XL", 349)}>Add to Cart</Button>
+            <Button variant="primary" onClick={() => addToCartHandle(2, "Green Men's Tshirt", "XL", 450)}>Add to Cart</Button>
           </Card.Body>
         </Card>
         <Card style={{ width: "25rem" }}>
@@ -114,7 +114,7 @@ function MenProduct() {
                 Ferozi T-Shirt for Men
               </a>
             </Card.Title>
-            <p className="price">Rs.349.00</p>
+            <p className="price">Rs.550.00</p>
             <div className="d-flex my-3 gap-3">
               <Button className="btn btn-light border border-2">Medium</Button>
               <Button className="btn btn-light border border-2">Large</Button>
@@ -122,7 +122,7 @@ function MenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-Ferozi"></div>
-            <Button variant="primary" onClick={() => addToCartHandle(3, "Ferozi Men's Tshirt", "M", 349)}>Add toCart</Button>
+            <Button variant="primary" onClick={() => addToCartHandle(3, "Ferozi Men's Tshirt", "M", 550)}>Add toCart</Button>
           </Card.Body>
         </Card>
       </div>
