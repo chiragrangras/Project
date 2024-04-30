@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Footer from "./Footer";
@@ -122,7 +123,7 @@ function MenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-Ferozi"></div>
-            <Button variant="primary" onClick={() => addToCartHandle(3, "Ferozi Men's Tshirt", "M", 550)}>Add toCart</Button>
+            <Button variant="primary" onClick={() => addToCartHandle(3, "Ferozi Men's Tshirt", "M", 550)}>Add to Cart</Button>
           </Card.Body>
         </Card>
       </div>

@@ -15,8 +15,17 @@ function WomenProduct() {
     size,
     price
   ) => {
-    const product = {id,name,size,price};
-    setCartDetail([...cartDetail,product])
+    let product = cartDetail.find(product => product.id === id);
+
+    if(product){
+      product.quantity++;
+      console.log(`Product in if: ${JSON.stringify(product)}`);
+      // setCartDetail([...cartDetail]);
+    }else{
+      product = { id, name, size, price, quantity: 1};
+      console.log(`Product in else: ${JSON.stringify(product)}`);
+      setCartDetail([...cartDetail, product]);
+    }
   };
 
   return (
@@ -38,7 +47,7 @@ function WomenProduct() {
                 Purple T-Shirt for Women
               </a>
             </Card.Title>
-            <p className="price">Rs.349.00</p>
+            <p className="price">Rs.650.00</p>
             <div className="d-flex my-3 gap-2">
               <Button className="btn btn-light border border-2">Small</Button>
               <Button className="btn btn-light border border-2">Large</Button>
@@ -50,7 +59,7 @@ function WomenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-purple"></div>
-            <Button variant="primary" onClick={()=>addToCartHandle(1,"Purple Women's Tshirt","Xl",349)}>Add to Cart</Button>
+            <Button variant="primary" onClick={()=>addToCartHandle(4,"Purple Women's Tshirt","Xl",650)}>Add to Cart</Button>
           </Card.Body>
         </Card>
         <Card style={{ width: "25rem" }}>
@@ -68,7 +77,7 @@ function WomenProduct() {
                 Green T-Shirt for Women
               </a>
             </Card.Title>
-            <p className="price">Rs.349.00</p>
+            <p className="price">Rs.750.00</p>
             <div>
               <Button className="btn btn-light border border-2 mx-2 my-2">
                 Small
@@ -89,7 +98,7 @@ function WomenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-green"></div>
-            <Button variant="primary" onClick={()=>addToCartHandle(2,"Green Women's Tshirt","M",349)}>Add Cart</Button>
+            <Button variant="primary" onClick={()=>addToCartHandle(5,"Green Women's Tshirt","M",750)}>Add Cart</Button>
           </Card.Body>
         </Card>
         <Card style={{ width: "25rem" }}>
@@ -107,7 +116,7 @@ function WomenProduct() {
                 Ferozi T-Shirt for Women
               </a>
             </Card.Title>
-            <p className="price">Rs.349.00</p>
+            <p className="price">Rs.850.00</p>
             <div className="d-flex my-3 gap-3">
               <Button className="btn btn-light border border-2">Medium</Button>
               <Button className="btn btn-light border border-2">Large</Button>
@@ -115,7 +124,7 @@ function WomenProduct() {
           </Card.Body>
           <Card.Body>
             <div className="box-Ferozi"></div>
-            <Button variant="primary" onClick={()=>addToCartHandle(2,"Ferozi Women's Tshirt","XXL",349)}>Add To Cart</Button>
+            <Button variant="primary" onClick={()=>addToCartHandle(6,"Ferozi Women's Tshirt","XXL",850)}>Add To Cart</Button>
           </Card.Body>
         </Card>
       </div>

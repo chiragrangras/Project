@@ -146,8 +146,7 @@ function Header() {
               <Nav.Link as={Link} to="/cart">
                 <FontAwesomeIcon
                   icon={faCartShopping}
-                  className="pt-3"
-                  size="1.5x"
+                  size="1.8x"
                 />
               </Nav.Link>
 
