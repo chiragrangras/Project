@@ -9,9 +9,35 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { UserLogin } from "./App";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartDetails } from "./App";
 
 function Header() {
   const { loginUser, setLoginUser } = useContext(UserLogin);
+  const {cartDetail} = useContext(CartDetails);
+
+  const calculateTotalQuantity = () => {
+    let totalQuantity = 0;
+    for(const product of cartDetail){
+      
+      // short-hand operator e.g. += -= *= /=
+      // totalQuantity = totalQuantity + product.quantity is same as totalQuantity += product.quantity
+      totalQuantity += product.quantity;
+
+      // increment operator increases the value of variable
+      // increment operator e.g. product.quantity++
+
+      // decrement operator decrease the value of variable
+      // decrement operator e.g. product.quantity--
+    }
+    return totalQuantity;
+  }
+
+  const calculateQtyReduce = () => {
+    return cartDetail.reduce((accummulator, currentProduct)=>{
+      return accummulator + currentProduct.quantity;
+    }, 0);
+  }
+
   const handleLogout = () => {
     setLoginUser("");
   };
@@ -148,6 +174,9 @@ function Header() {
                   icon={faCartShopping}
                   size="1.8x"
                 />
+                <span>{cartDetail.length > 0 ? cartDetail.length : ''}</span>
+                <span>{calculateTotalQuantity() > 0 ? calculateTotalQuantity() : ''}</span>
+                <span>{calculateQtyReduce() > 0 ? calculateQtyReduce() : ''}</span>
               </Nav.Link>
 
               {loginUser ? (
