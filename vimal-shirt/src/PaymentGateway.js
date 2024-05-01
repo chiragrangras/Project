@@ -1,7 +1,19 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { useContext, useState } from "react";
+import { CartDetails } from "./App";
+import {
+  Form,
+  FormLabel,
+  FormControl,
+  Button,
+} from "react-bootstrap";
+import "./PaymentGateway.css";
 
-function Payment() {
+function PaymentGateway() {
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const { cartDetail } = useContext(CartDetails);
   const computeTotal = () => {
     let sum = 0;
     for (const product of cartDetail) {
@@ -12,42 +24,69 @@ function Payment() {
   return (
     <>
       <h1>Payment</h1>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="flexRadioDefault"
-          id="flexRadioDefault1"
-        />
-        <label class="form-check-label" for="flexRadioDefault1">
-          Gpay
-        </label>
+      <div className="d-flex justify-content-center">
+        <Form className="form-layout">
+          <fieldset>
+            <FormLabel as="legend">Select Payment Option:</FormLabel>
+            <Form.Group>
+              <Form.Check
+                name="paymentOption"
+                type="radio"
+                id={`gpay`}
+                label={`GPay`}
+                value='gpay'
+                onChange={(e)=>{
+                  setSelectedOption(e.target.value)
+                }}
+              />
+              {selectedOption === "gpay" && (
+              <FormControl
+                type="text"
+                placeholder="Enter GPay ID"
+                maxLength={16}
+              />
+            )}
+            </Form.Group>
+            <Form.Group>
+              <Form.Check
+                name="paymentOption"
+                type="radio"
+                id={`phonepay`}
+                label={`PhonePay`}
+                value="phonepay"
+                onChange={(e)=>{
+                  setSelectedOption(e.target.value)
+                }}
+              />
+              {selectedOption === "phonepay" && (
+              <FormControl
+                type="text"
+                placeholder="Enter PhonePay ID"
+                maxLength={16}
+              />
+            )}
+            </Form.Group>
+            <Form.Group>
+              <Form.Check
+                name="paymentOption"
+                type="radio"
+                id={`cod`}
+                label={`Cash-on-delivery`}
+                value='cod'
+                onChange={(e)=>{
+                  setSelectedOption(e.target.value)
+                }}
+              />
+            </Form.Group>
+          </fieldset>
+        </Form>
       </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="flexRadioDefault"
-          id="flexRadioDefault1"
-        />
-        <label class="form-check-label" for="flexRadioDefault1">
-          Phonepay
-        </label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="flexRadioDefault"
-          id="flexRadioDefault1"
-        />
-        <label class="form-check-label" for="flexRadioDefault1">
-          Cash on Delivery
-        </label>
-      </div>
+
       <div>Total : {computeTotal()}</div>
-      <div><Button>Order</Button></div>
+      <div>
+        <Button>Order</Button>
+      </div>
     </>
   );
 }
-export default Payment;
+export default PaymentGateway;
