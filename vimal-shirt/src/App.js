@@ -14,6 +14,7 @@ import SignIn from "./SignIn";
 import WomenProduct from "./WomenProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PaymentGateway from "./PaymentGateway";
 
 export const UserLogin = createContext();
 export const CartDetails = createContext();
@@ -48,6 +49,7 @@ function App() {
               ></Route>
               <Route path="/sign-up" element={<SignUp />}></Route>
               <Route path="/sign-in" element={<SignIn />}></Route>
+              <Route path="/payment" element={<PaymentGateway />}></Route>
             </Routes>
           </CartDetails.Provider>
         </UserLogin.Provider>
