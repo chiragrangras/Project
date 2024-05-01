@@ -96,19 +96,8 @@
   text-decoration: none;
   color: black;
 }
-.line{
-  border:1px solid white;
-}
-.cart{
-  border-radius: 5px;
-  margin: 10px 0px 10px 400px;
-  width: 540px;
-  height: 450px;
-  border: 1px solid black;
-  text-align: center;
-  background-color:rgba(33, 37, 41, 1);
-  color: white;
-}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
