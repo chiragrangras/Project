@@ -3,8 +3,14 @@ import { CartDetails } from "./App";
 import Button from "react-bootstrap/Button";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
+import "./Cart.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 function Cart() {
+  const navigate = useNavigate();
+
   const { cartDetail, setCartDetail } = useContext(CartDetails);
 
   const addQuantityHandler = (id) => {
@@ -37,38 +43,65 @@ function Cart() {
   return (
     <>
       <Header />
-      <div className="cart">
-        <div>
-          <h1>Cart items</h1>
-        </div>
-        <div className="line"/>
-        {cartDetail.map((product, index) => (
-          <div key={index}>
-            {`${product.name} - ${product.size} - Rs. ${product.price} - Quantity: ${product.quantity}`}
-            <span>
-              <Button
-                className="ms-2 mt-2"
-                onClick={() => {
-                  addQuantityHandler(product.id);
-                }}
-              >
-                Add
-              </Button>
-            </span>
-            <span>
-              <Button
-                className="ms-2 mt-2"
-                onClick={() => {
-                  removeQuantityHandler(product.id);
-                }}
-              >
-                Remove
-              </Button>
-            </span>
+      <div className="d-flex justify-content-center">
+        <div className="cart">
+          <div>
+            <h1 className="mt-3">Cart items</h1>
           </div>
-        ))}
-        <div className="ms-2 mt-2">Total Price: {computeTotal()}</div>
-        <div><Button className="ms-2 mt-2">Payment</Button></div>
+
+          {cartDetail.length > 0 && (
+            <div className="table">
+              <div className="header d-flex">
+                <div className="w-40">Product</div>
+                <div className="w-15">Size</div>
+                <div className="w-15">Price</div>
+                <div className="w-15">Quantity</div>
+                <div className="w-15">Sub-total</div>
+              </div>
+              <div className="line"></div>
+              <div className="body">
+                {cartDetail.map((product, index) => (
+                  <div key={index} className="d-flex">
+                    <div className="w-40 align-left">{product.name}</div>
+                    <div className="w-15">{product.size}</div>
+                    <div className="w-15">{product.price}</div>
+                    <div className="w-15 d-flex justify-content-center align-items-center gap-3">
+                      <FontAwesomeIcon
+                        icon={faMinus}
+                        size="1.8x"
+                        onClick={() => {
+                          removeQuantityHandler(product.id);
+                        }}
+                        className="cursorPointer"
+                      />
+                      <div>{product.quantity}</div>
+                      <FontAwesomeIcon
+                        icon={faPlus}
+                        size="1.8x"
+                        onClick={() => {
+                          addQuantityHandler(product.id);
+                        }}
+                        className="cursorPointer"
+                      />
+                    </div>
+                    <div className="w-15">
+                      {product.quantity * product.price}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+          )}
+          <div className="line"></div>
+          <div className="ms-2 mt-2">Total Price: {computeTotal()}</div>
+          <div className="d-flex justify-content-center gap-3 mt-2">
+            <Button onClick={()=>navigate(-1)} className="btn btn-primary">
+              Back
+            </Button>
+            <Button onClick={()=>navigate("/payment")} className="btn btn-primary">Payment</Button>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
