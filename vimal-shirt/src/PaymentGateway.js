@@ -8,8 +8,11 @@ import {
   Button,
 } from "react-bootstrap";
 import "./PaymentGateway.css";
+import { useNavigate } from "react-router-dom";
 
 function PaymentGateway() {
+
+  const navigate = useNavigate();
 
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -83,9 +86,12 @@ function PaymentGateway() {
       </div>
 
       <div>Total : {computeTotal()}</div>
-      <div>
-        <Button>Order</Button>
-      </div>
+      <div className="d-flex justify-content-center gap-3 mt-2">
+            <Button onClick={()=>navigate(-1)} className="btn btn-primary">
+              Back
+            </Button>
+            <Button className="btn btn-primary">Oder</Button>
+          </div>
     </>
   );
 }
