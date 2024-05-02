@@ -23,6 +23,12 @@
       "name": "deepak",
       "email": "rajput1298@gmail.com",
       "password": "hello123"
+    },
+    {
+      "id": "1eb7",
+      "name": "Vishal",
+      "email": "vishal.rangras02@gmail.com",
+      "password": "4564646"
     }
   ]
 }
