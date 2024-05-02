@@ -27,6 +27,7 @@ function PaymentGateway() {
   return (
     <>
       <h1>Payment</h1>
+      <div className="line"></div>
       <div className="d-flex justify-content-center">
         <Form className="form-layout">
           <fieldset>
@@ -84,8 +85,8 @@ function PaymentGateway() {
           </fieldset>
         </Form>
       </div>
-
       <div>Total : {computeTotal()}</div>
+      <div className="line"></div>
       <div className="d-flex justify-content-center gap-3 mt-2">
             <Button onClick={()=>navigate(-1)} className="btn btn-primary">
               Back
