@@ -9,14 +9,23 @@ import {
 } from "react-bootstrap";
 import "./PaymentGateway.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 function PaymentGateway() {
 
   const navigate = useNavigate();
 
+  const { cartDetail, setCartDetail } = useContext(CartDetails);
+
+  const notifyPaymentSuccess = () => {
+    setCartDetail([]);
+    toast.success(`Payment successful.`, {position: "top-center"});
+    navigate("/cart");
+  }
+
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const { cartDetail } = useContext(CartDetails);
+  
   const computeTotal = () => {
     let sum = 0;
     for (const product of cartDetail) {
@@ -86,13 +95,13 @@ function PaymentGateway() {
         </Form>
       </div>
       <div>Total : {computeTotal()}</div>
-      <div className="line"></div>
-      <div className="d-flex justify-content-center gap-3 mt-2">
+      <div className="d-flex justify-content-center gap-3 mt-2 mb-2">
             <Button onClick={()=>navigate(-1)} className="btn btn-primary">
               Back
             </Button>
-            <Button className="btn btn-primary">Oder</Button>
+            <Button className="btn btn-primary" onClick={notifyPaymentSuccess}>Order</Button>
           </div>
+      <div className="line"></div>
     </>
   );
 }

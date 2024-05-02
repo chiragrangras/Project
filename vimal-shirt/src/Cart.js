@@ -68,7 +68,7 @@ function Cart() {
                     <div className="w-15 d-flex justify-content-center align-items-center gap-3">
                       <FontAwesomeIcon
                         icon={faMinus}
-                        size="1.8x"
+                        size="1x"
                         onClick={() => {
                           removeQuantityHandler(product.id);
                         }}
@@ -77,7 +77,7 @@ function Cart() {
                       <div>{product.quantity}</div>
                       <FontAwesomeIcon
                         icon={faPlus}
-                        size="1.8x"
+                        size="1x"
                         onClick={() => {
                           addQuantityHandler(product.id);
                         }}

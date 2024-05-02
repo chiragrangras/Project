@@ -36,7 +36,7 @@ function App() {
       <BrowserRouter>
         <UserLogin.Provider value={{ loginUser, setLoginUser }}>
           <CartDetails.Provider value={{ cartDetail, setCartDetail }}>
-            <ToastContainer hideProgressBar={true} />
+            <ToastContainer hideProgressBar={false} />
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/cart" element={<Cart />}></Route>

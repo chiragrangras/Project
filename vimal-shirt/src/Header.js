@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import './Header.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { UserLogin } from "./App";
@@ -32,11 +33,11 @@ function Header() {
     return totalQuantity;
   }
 
-  const calculateQtyReduce = () => {
-    return cartDetail.reduce((accummulator, currentProduct)=>{
-      return accummulator + currentProduct.quantity;
-    }, 0);
-  }
+  // const calculateQtyReduce = () => {
+  //   return cartDetail.reduce((accummulator, currentProduct)=>{
+  //     return accummulator + currentProduct.quantity;
+  //   }, 0);
+  // }
 
   const handleLogout = () => {
     setLoginUser("");
@@ -57,17 +58,14 @@ function Header() {
           </div>
         </Form>
         <div className="logo">
-          <a class="site-branding" href="/">
+          <a className="site-branding" href="/">
             <img
               src="//vimalclothing.com/cdn/shop/files/vimal_clothing_c0eafb7c-4d96-4c7d-9f4d-fe5cbc38cc92.png?v=1706553278
               &amp;width=440"
               alt=""
-              srcset="//vimalclothing.com/cdn/shop/files/vimal_clothing_c0eafb7c-4d96-4c7d-9f4d-fe5cbc38cc92.png?v=1706553278
-              &amp;width=110 110w, //vimalclothing.com/cdn/shop/files/vimal_clothing_c0eafb7c-4d96-4c7d-9f4d-fe5cbc38cc92.png?v=1706553278
-              &amp;width=352 352w"
               width="110"
               loading="lazy"
-              class="site-branding-image"
+              className="site-branding-image"
             />
           </a>
         </div>
@@ -84,7 +82,7 @@ function Header() {
                 <NavDropdown.Item>
                   <Link
                     to={"/men-product"}
-                    class="text-decoration-none text-dark"
+                    className="text-decoration-none text-dark"
                   >
                     T-shirt
                   </Link>{" "}
@@ -107,14 +105,11 @@ function Header() {
                 <NavDropdown.Item>
                   <Link
                     to={"/women-product"}
-                    class="text-decoration-none text-dark"
+                    className="text-decoration-none text-dark"
                   >
                     T-shirt
                   </Link>{" "}
                 </NavDropdown.Item>
-                {/* <NavDropdown.Item href="women-product">
-                  Women T-shirt
-                </NavDropdown.Item> */}
                 <NavDropdown.Item href="#action2">
                   Women Tank Top
                 </NavDropdown.Item>
@@ -172,11 +167,11 @@ function Header() {
               <Nav.Link as={Link} to="/cart">
                 <FontAwesomeIcon
                   icon={faCartShopping}
-                  size="1.8x"
+                  size="1x"
                 />
-                <span>{cartDetail.length > 0 ? cartDetail.length : ''}</span>
-                <span>{calculateTotalQuantity() > 0 ? calculateTotalQuantity() : ''}</span>
-                <span>{calculateQtyReduce() > 0 ? calculateQtyReduce() : ''}</span>
+                {/* <span>{cartDetail.length > 0 ? cartDetail.length : ''}</span> */}
+                {calculateTotalQuantity() > 0 && <span className="calculate-quantity">{calculateTotalQuantity()}</span>}
+                {/* <span>{calculateQtyReduce() > 0 ? calculateQtyReduce() : ''}</span> */}
               </Nav.Link>
 
               {loginUser ? (
