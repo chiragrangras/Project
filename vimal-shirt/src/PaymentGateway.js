@@ -1,31 +1,26 @@
 import React from "react";
 import { useContext, useState } from "react";
 import { CartDetails } from "./App";
-import {
-  Form,
-  FormLabel,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Form, FormLabel, FormControl, Button } from "react-bootstrap";
 import "./PaymentGateway.css";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import Footer from "./Footer";
+import Header from "./Header";
 
 function PaymentGateway() {
-
   const navigate = useNavigate();
 
   const { cartDetail, setCartDetail } = useContext(CartDetails);
 
   const notifyPaymentSuccess = () => {
     setCartDetail([]);
-    toast.success(`Payment successful.`, {position: "top-center"});
+    toast.success(`Payment successful.`, { position: "top-center" });
     navigate("/cart");
-  }
+  };
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  
   const computeTotal = () => {
     let sum = 0;
     for (const product of cartDetail) {
@@ -35,6 +30,7 @@ function PaymentGateway() {
   };
   return (
     <>
+      <Header />
       <h1>Payment</h1>
       <div className="line"></div>
       <div className="d-flex justify-content-center">
@@ -47,18 +43,18 @@ function PaymentGateway() {
                 type="radio"
                 id={`gpay`}
                 label={`GPay`}
-                value='gpay'
-                onChange={(e)=>{
-                  setSelectedOption(e.target.value)
+                value="gpay"
+                onChange={(e) => {
+                  setSelectedOption(e.target.value);
                 }}
               />
               {selectedOption === "gpay" && (
-              <FormControl
-                type="text"
-                placeholder="Enter GPay ID"
-                maxLength={16}
-              />
-            )}
+                <FormControl
+                  type="text"
+                  placeholder="Enter GPay ID"
+                  maxLength={16}
+                />
+              )}
             </Form.Group>
             <Form.Group>
               <Form.Check
@@ -67,17 +63,17 @@ function PaymentGateway() {
                 id={`phonepay`}
                 label={`PhonePay`}
                 value="phonepay"
-                onChange={(e)=>{
-                  setSelectedOption(e.target.value)
+                onChange={(e) => {
+                  setSelectedOption(e.target.value);
                 }}
               />
               {selectedOption === "phonepay" && (
-              <FormControl
-                type="text"
-                placeholder="Enter PhonePay ID"
-                maxLength={16}
-              />
-            )}
+                <FormControl
+                  type="text"
+                  placeholder="Enter PhonePay ID"
+                  maxLength={16}
+                />
+              )}
             </Form.Group>
             <Form.Group>
               <Form.Check
@@ -85,9 +81,9 @@ function PaymentGateway() {
                 type="radio"
                 id={`cod`}
                 label={`Cash-on-delivery`}
-                value='cod'
-                onChange={(e)=>{
-                  setSelectedOption(e.target.value)
+                value="cod"
+                onChange={(e) => {
+                  setSelectedOption(e.target.value);
                 }}
               />
             </Form.Group>
@@ -96,12 +92,15 @@ function PaymentGateway() {
       </div>
       <div>Total : {computeTotal()}</div>
       <div className="d-flex justify-content-center gap-3 mt-2 mb-2">
-            <Button onClick={()=>navigate(-1)} className="btn btn-primary">
-              Back
-            </Button>
-            <Button className="btn btn-primary" onClick={notifyPaymentSuccess}>Order</Button>
-          </div>
+        <Button onClick={() => navigate(-1)} className="btn btn-primary">
+          Back
+        </Button>
+        <Button className="btn btn-primary" onClick={notifyPaymentSuccess}>
+          Order
+        </Button>
+      </div>
       <div className="line"></div>
+      <Footer />
     </>
   );
 }
