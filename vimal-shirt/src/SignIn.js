@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 
 function SignIn() {
   const { setLoginUser } = useContext(UserLogin);
+  
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
@@ -46,7 +47,6 @@ function SignIn() {
     }
     if (validateerrors()) {
       console.log("proceed");
-
       axios
         .get("http://localhost:4000/users")
         .then((response) => {
@@ -60,6 +60,7 @@ function SignIn() {
             console.log("Login successful");
             notifyLoginSuccess(userFound.name);
             setLoginUser(userFound.name);
+            localStorage.setItem("loggedInUser", userFound.name);
           } else {
             notifyLoginFailure();
             console.log("Login failed. Invalid credentials");
