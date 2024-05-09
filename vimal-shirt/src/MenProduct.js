@@ -24,7 +24,9 @@ function MenProduct() {
     }else{
       product = { id, name, size, price, quantity: 1};
       console.log(`Product in else: ${JSON.stringify(product)}`);
-      setCartDetail([...cartDetail, product]);
+      //setCartDetail([...cartDetail, product]);
+      localStorage.setItem("cart", JSON.stringify([...cartDetail, product]));
+      setCartDetail(JSON.parse(localStorage.getItem("cart")));
     }
   };
 
