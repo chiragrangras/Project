@@ -11,12 +11,14 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 function Cart() {
   const navigate = useNavigate();
 
-  const { cartDetail, setCartDetail } = useContext(CartDetails);
+  const { setCartDetail } = useContext(CartDetails);
+  const cartDetail = localStorage.getItem("cart") != null ? JSON.parse(localStorage.getItem("cart")) : [];
 
   const addQuantityHandler = (id) => {
     const foundProduct = cartDetail.find((product) => product.id === id);
     foundProduct.quantity++;
     setCartDetail([...cartDetail]);
+    localStorage.setItem("cart", JSON.stringify([...cartDetail]));
   };
 
   const removeQuantityHandler = (id) => {
@@ -24,11 +26,13 @@ function Cart() {
     if (foundProduct.quantity > 1) {
       foundProduct.quantity--;
       setCartDetail([...cartDetail]);
+      localStorage.setItem("cart", JSON.stringify([...cartDetail]));
     } else {
       const updatedCartDetail = cartDetail.filter(
         (product) => product.id !== id
       );
       setCartDetail(updatedCartDetail);
+      localStorage.setItem("cart", JSON.stringify(updatedCartDetail));
     }
   };
 
@@ -49,7 +53,7 @@ function Cart() {
             <h1 className="mt-3">Cart items</h1>
           </div>
 
-          {cartDetail.length > 0 && (
+          {cartDetail?.length > 0 && (
             <div className="table">
               <div className="header d-flex">
                 <div className="w-40">Product</div>
