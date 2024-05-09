@@ -14,6 +14,7 @@ function PaymentGateway() {
   const { cartDetail, setCartDetail } = useContext(CartDetails);
 
   const notifyPaymentSuccess = () => {
+    localStorage.removeItem('cart');
     setCartDetail([]);
     toast.success(`Payment successful.`, { position: "top-center" });
     navigate("/cart");
