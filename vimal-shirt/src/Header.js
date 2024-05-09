@@ -9,12 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { UserLogin } from "./App";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartDetails } from "./App";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Header() {
-  const { loginUser, setLoginUser } = useContext(UserLogin);
-  const {cartDetail} = useContext(CartDetails);
+  const { setLoginUser } = useContext(UserLogin);
+  const cartDetail = localStorage.getItem("cart") != null ? JSON.parse(localStorage.getItem("cart")): [];
+  const loginUser = localStorage.getItem("loggedInUser");
+
+  const navigate = useNavigate();
 
   const calculateTotalQuantity = () => {
     let totalQuantity = 0;
@@ -40,7 +43,9 @@ function Header() {
   // }
 
   const handleLogout = () => {
+    localStorage.clear();
     setLoginUser("");
+    navigate("/");
   };
 
   return (
