@@ -3,7 +3,7 @@ import "./SignIn.css";
 import "./Signup.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import Cart from "./Cart";
 import Home from "./Home";
 import TrackOrder from "./TrackOrder";
@@ -15,6 +15,7 @@ import WomenProduct from "./WomenProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PaymentGateway from "./PaymentGateway";
+import KidsTShits from "./KidsT-Shirts";
 
 export const UserLogin = createContext();
 export const CartDetails = createContext();
@@ -42,6 +43,7 @@ function App() {
               <Route path="/cart" element={<Cart />}></Route>
               <Route path="/men-product" element={<MenProduct />}></Route>
               <Route path="/women-product" element={<WomenProduct />}></Route>
+              <Route path="/KidsTShits" element={<KidsTShits/>}></Route>
               <Route path="/track-order" element={<TrackOrder />}></Route>
               <Route
                 path="/sell-our-product"
