@@ -138,9 +138,17 @@ function Header() {
                 <NavDropdown.Item href="#action9">Women Set</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Kids" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action1">
-                  Kids T-shirts
+              <NavDropdown.Item>
+                  <Link
+                    to={"/KidsTShits"}
+                    className="text-decoration-none text-dark"
+                  >
+                    T-shirt
+                  </Link>{" "}
                 </NavDropdown.Item>
+                {/* <NavDropdown.Item href="#action1">
+                  Kids T-shirts
+                </NavDropdown.Item> */}
                 <NavDropdown.Item href="#action2">Kids Shorts</NavDropdown.Item>
                 <NavDropdown.Item href="#action3">
                   Kids Trackpants
