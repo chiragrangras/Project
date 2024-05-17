@@ -1,0 +1,18 @@
+.box-pink{
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    border: 2px solid black;
+    background-color: #ff95a6;
+}
+.price-kids{
+    text-align: left;
+    color: red;
+}
+.box-orange{
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    border: 2px solid black;
+    background-color: #ffa704;
+}
