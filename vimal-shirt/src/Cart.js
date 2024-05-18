@@ -99,7 +99,7 @@ function Cart() {
           )}
           <div className="line"></div>
           <div className="ms-2 mt-2">Total Price: {computeTotal()}</div>
-          <div className="d-flex justify-content-center gap-3 mt-2">
+          <div className="d-flex justify-content-center gap-3 my-3">
             <Button onClick={()=>navigate(-1)} className="btn btn-primary">
               Back
             </Button>
