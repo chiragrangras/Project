@@ -7,12 +7,19 @@
 }
 .price-kids{
     text-align: left;
-    color: red;
+    color: black;
 }
 .box-orange{
     width: 30px;
     height: 30px;
     border-radius: 2px;
     border: 2px solid black;
-    background-color: #ffa704;
+    background-color: #fb6d15;
+}
+.box-green{
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    border: 2px solid black;
+    background-color: #a7fba7;
 }
