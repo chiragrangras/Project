@@ -16,7 +16,7 @@ function PaymentGateway() {
   const notifyPaymentSuccess = () => {
     localStorage.removeItem('cart');
     setCartDetail([]);
-    toast.success(`Payment successful.`, { position: "top-center" });
+    toast.success(`Payment successful.`, { position: "top-center", draggable: true, });
     navigate("/cart");
   };
 
@@ -92,7 +92,7 @@ function PaymentGateway() {
         </Form>
       </div>
       <div>Total : {computeTotal()}</div>
-      <div className="d-flex justify-content-center gap-3 mt-2 mb-2">
+      <div className="d-flex justify-content-center gap-3 my-3">
         <Button onClick={() => navigate(-1)} className="btn btn-primary">
           Back
         </Button>
